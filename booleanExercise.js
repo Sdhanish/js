@@ -45,3 +45,5 @@ guess === result ? console.log(`You win`) : console.log('You lost');
 
 
 
+
+

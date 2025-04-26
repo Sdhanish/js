@@ -1,8 +1,22 @@
-const score = {
+
+
+let score = JSON.parse(localStorage.getItem('score')) || {
   wins:0,
   losses:0,
   ties:0
 }
+console.log(score);
+console.log(localStorage.getItem('score'));
+
+let display = document.getElementById('heading')
+
+
+
+
+
+
+
+
 
 function pickComputerMove() {
  
@@ -28,8 +42,20 @@ function scores(result){
   }else if(result==='Tie'){
     score.ties+=1;
   }
+
+
+
+
+  display.innerHTML = `Wins: ${score.wins} , Losses : ${score.losses} , Ties: ${score.ties}`
+
+  localStorage.setItem('score',JSON.stringify(score));
 return score;  
 }
+
+
+
+
+
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -72,6 +98,11 @@ function resetScore(){
   score.wins=0;
   score.losses=0;
   score.ties=0;
+
+  localStorage.removeItem('score')
+
+  display.innerHTML = `Wins: ${score.wins} , Losses : ${score.losses} , Ties: ${score.ties}`
+
 alert(`Scores reset Successfully..! \n Wins: ${score.wins}, Losses: ${score.losses} Ties: ${score.ties}`)
 }
 

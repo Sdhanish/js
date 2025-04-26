@@ -35,7 +35,10 @@ let message = "Hi Good morning ";
 console.log(message);
 
 variable1=2;
-console.log(variable1);
+console.log(variable1)
+
+
+
 
 
 
